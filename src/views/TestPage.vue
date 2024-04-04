@@ -5,7 +5,7 @@ import AppButton from "../components/UI/AppButton.vue";
   <h3 class="text-center">Тестовая страница</h3>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-8 p-2">
+      <div class="col-8 p-2 border border-1 border-warning rounded rounded-5">
         <h4 class="text-center">Beer list</h4>
         <div class="item border border-2 border-warning rounded rounded-5 p-1 d-flex align-items-center">
             <div class="col-4">
