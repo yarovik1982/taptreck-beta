@@ -90,3 +90,61 @@ a {
 .router-link-active{
   text-shadow: 0 1px #000;
 }
+.flex {
+  display: flex;
+  width: 100%;
+}
+.flex-item {
+  padding: 1rem;
+}
+.flex-item-extend {
+  flex:1 auto;
+}
+.flex-item-fixed--width {
+  width: 350px;
+}
+.flex-body {
+  padding: 1rem;
+  border:#ffc107 1px solid;
+}
+.flex-dir-col {
+  position: relative;
+}
+.flex-avatar {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  background: #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.flex-avatar-settings {
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flex-avatar-settings > .flex-avatar-icon{
+  opacity: 0;
+  transition: opacity .5s linear;
+  -webkit-transition: opacity .5s linear;
+  -moz-transition: opacity .5s linear;
+  -ms-transition: opacity .5s linear;
+  -o-transition: opacity .5s linear;
+}
+
+.flex-avatar-upload{
+  opacity: 0;
+  transition: opacity .5s linear;
+  -webkit-transition: opacity .5s linear;
+  -moz-transition: opacity .5s linear;
+  -ms-transition: opacity .5s linear;
+  -o-transition: opacity .5s linear;
+}
+.flex-avatar:hover .flex-avatar-upload{
+  opacity: 1;
+}
+.flex-dir-col:hover .flex-avatar-settings > .flex-avatar-icon{
+  opacity: 1;
+}
