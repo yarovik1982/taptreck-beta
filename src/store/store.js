@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 import { watch } from "vue";
 
 const API_URL = 'http://109.201.96.70:8081/api/'
-import { createStore } from 'vuex';
+
 
 export default createStore({
    state: {
