@@ -1,5 +1,6 @@
 <!-- HomePage.vue -->
 <script setup>
+import AppOffer from '../components/AppOffer.vue';
 import { defineProps } from 'vue';
 const props = defineProps({
   handler:{
@@ -42,6 +43,9 @@ const handleClick = (typeForm) => {
             </div>
         </div>
     </section>
+    <section id="offer">
+    <app-offer></app-offer>
+  </section>
 </template>
 <style scoped >
 
