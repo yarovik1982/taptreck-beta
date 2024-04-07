@@ -23,26 +23,26 @@ onMounted(()=>{
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav w-100">
-          <li class="nav-item">
-            <RouterLink class="nav-link py-0 position-relative" aria-current="page" to="/">Главная</RouterLink>
+          <li class="nav-item ">
+            <RouterLink class="nnav-link py-0 position-relative" aria-current="page" to="/">Главная</RouterLink>
           </li>
-          <li class="nav-item">
-            <RouterLink class="nav-link py-0 position-relative" aria-current="page" to="/place">Места</RouterLink>
+          <li class="nav-item ms-3">
+            <RouterLink class="nnav-link py-0 position-relative" aria-current="page" to="/place">Места</RouterLink>
           </li>
-          <li class="nav-item">
-            <RouterLink class="nav-link py-0 position-relative" aria-current="page" to="/beer">Пиво</RouterLink>
+          <li class="nav-item ms-3">
+            <RouterLink class="nnav-link py-0 position-relative" aria-current="page" to="/beer">Пиво</RouterLink>
           </li>
-          <li class="nav-item">
-            <RouterLink class="nav-link py-0 position-relative" aria-current="page" to="/brewery">Пивоварни</RouterLink>
+          <li class="nav-item ms-3">
+            <RouterLink class="nnav-link py-0 position-relative" aria-current="page" to="/brewery">Пивоварни</RouterLink>
           </li>
-          <li class="nav-item">
-            <RouterLink class="nav-link py-0 position-relative" aria-current="page" to="/test">TEST</RouterLink>
+          <li class="nav-item ms-3">
+            <RouterLink class="nnav-link py-0position-relative" aria-current="page" to="/test">TEST</RouterLink>
           </li>
-          <li class="nav-item">
-            <a role="button" class="nav-link py-0" @click="handleClick('writeUs')">Написать нам</a>
+          <li class="nav-item ms-3">
+            <a role="button" class="nnav-link py-0" @click="handleClick('writeUs')">Написать нам</a>
           </li>
           <li class="nav-item ms-auto" v-if="isAuth">
-            <RouterLink class="nav-link py-0 position-relative" to="/profile-favorites">Профиль</RouterLink>
+            <RouterLink class="nnav-link py-0 position-relative" to="/profile-favorites">Профиль</RouterLink>
           </li>         
         </ul>
         
@@ -55,7 +55,7 @@ onMounted(()=>{
    position: absolute;
    content:"";
    top: 100%;
-   left: 10px;
+   left: 0;
    width: 50%;
    height: 3px;
    background-color: yellow;

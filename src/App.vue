@@ -2,6 +2,7 @@
 <script setup>
 import AppHeader from "./components/AppHeader.vue";
 import AppNavbar from "./components/AppNavbar.vue";
+import AppFooterVue from "./components/AppFooter.vue";
 import AppDialog from './components/UI/AppDialog.vue'
 import AppLoginForm from "./components/AppLoginForm.vue";
 import AppRegisterForm from './components/AppRegisterForm.vue'
@@ -56,10 +57,11 @@ const hideLayout = () => {
   <AppHeader @open-form="openForm" />
   <AppNavbar @open-form="openForm"/>
   <RouterView
-  @open-form="openForm"
   
   >
-  </RouterView>
+</RouterView>
+<AppFooterVue @open-form="openForm"></AppFooterVue>
 </template>
 
 <style scoped></style>
+<!-- @open-form="openForm" -->

@@ -15,15 +15,16 @@ const props = defineProps({
     <div class="row">
       <div class="col-4 d-flex align-items-center justify-content-center">
         <div class="item-img">
-          <img :src="item.image" :alt="item.name" />
+          <img :src="item.image" :alt="item.title" />
         </div>
       </div>
       <div class="col-8 p-3">
         <div class="d-flex align-items-center justify-content-between">
-          <h4 class="item-title">{{ item.name }}</h4>
+          <h4 class="item-title">{{ item.title }}</h4>
           <AppFavoriteIcon></AppFavoriteIcon>
         </div>
         <div class="item-description">{{ item.description }}</div>
+        {{ item.available }}
       </div>
     </div>
   </div>

@@ -1,12 +1,12 @@
 <script setup>
 import { defineProps } from 'vue'
 const props = defineProps({
-   type:{type:String, default:'button'},
-   btnClass:{type:String, default:'btn'}
+   type:String,
+   btnClass:String
 })
 </script>
 <template>
-    <button >
+    <button :type="type" :class="btnClass">
       <slot></slot>
     </button>
 </template>
