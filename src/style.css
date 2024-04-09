@@ -3,7 +3,7 @@
   --base-warning:#ffc107;
   --base-btn-bg:var(--base-warning);
   --base-btn-width: 275px;
-  --base-btn-padding: 0.5rem 1rem;
+  --base-btn-padding: 0.25rem 1rem;
   --base-btn-color: #fff;
   --base-btn-radius: 20px;
 }
@@ -64,6 +64,13 @@ section{
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   min-width: 320px;
+  background-image: url(../assets/images/Layer1.svg);
+  background-repeat: repeat;
+  background-size: 150px 200px;
+}
+.fform-bg{
+  background-color: rgba(255,255,255, .8);
+  z-index: -1;
 }
 .form-title{
   width: fit-content;
@@ -101,7 +108,7 @@ section{
 .router-link-active{
   text-shadow: 0 1px #000;
 }
-.router-link-active::before{
+/* .router-link-active::before{
   position: absolute;
   content:"";
   top: 100%;
@@ -109,7 +116,7 @@ section{
   width: 50%;
   height: 3px;
   background-color: yellow;
-}
+} */
 .flex {
   display: flex;
   width: 100%;

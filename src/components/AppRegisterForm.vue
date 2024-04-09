@@ -15,11 +15,12 @@ const password = ref('')
     class="fform bg-white p-5 w-50 rounded-5 position-relative"
     
   >
+  <div class="fform-bg w-100 h-100 position-absolute top-0 start-0 rounded-5"></div>
     <button class="btnClose position-absolute" @click.prevent="hideLayout('register')">
       &times;
     </button>
     <div class="form-header">
-      <h3>Регистрация</h3>
+      <h3 class="form-title">Регистрация</h3>
     </div>
     <div class="mb-3">
       <label for="inpName" class="form-label"
@@ -72,9 +73,9 @@ const password = ref('')
       <input type="checkbox" class="form-check-input" id="exampleCheck1" />
       <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
     </div>
-    <div class="d-flex justify-content-center">
-      <button type="submit" class="base-btn">Отправить</button>
-    </div>
+    
+      <button type="submit" class="base-btn d-block m-auto">Отправить</button>
+    
   </form>
 </template>
 <style scoped></style>

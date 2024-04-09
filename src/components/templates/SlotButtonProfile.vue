@@ -1,11 +1,5 @@
-//ProfilePlacesPage.vue
 <script setup>
-import AppButton from '../../components/UI/AppButton.vue';
-const emit = defineEmits(['open-form'])
-const handleClick = (typeForm) => {
-    
-  emit("open-form", typeForm);
-};
+import AppButton from '../UI/AppButton.vue';
 </script>
 <template>
     <div class="container-fluid position-absolute" style="top:140px;left: 0;">
@@ -13,7 +7,6 @@ const handleClick = (typeForm) => {
             <app-button :class="'base-btn'" @click="handleClick('addPlace')">Добавить точку продаж</app-button>
         </div>
     </div>
-    <h3 class="text-center">Мои точки продаж</h3>
 </template>
 <style scoped >
 
