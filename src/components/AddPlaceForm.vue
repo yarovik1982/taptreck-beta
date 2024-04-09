@@ -7,14 +7,14 @@ const handleClick = (type) => {
 <template>
     <form
     action="#"
-    class="fform bg-white p-5 w-50 rounded-5 position-relative"
+    class="fform bg-white p-5 w-75 rounded-5 position-relative"
   >
   <div class="fform-bg w-100 h-100 position-absolute top-0 start-0 rounded-5"></div>
-    <button class="btnClose position-absolute" @click.prevent="handleClick('writeUs')">
+    <button class="btnClose position-absolute" @click.prevent="handleClick('addPlace')">
       &times;
     </button>
     <div class="form-header">
-      <h3 class="form-title">Написать нам</h3>
+      <h3 class="form-title">Добавить точку продаж</h3>
     </div>
     <div class="container-fluid">
       <div class="row">
@@ -54,9 +54,7 @@ const handleClick = (type) => {
         </div>
       </div>
     </div>
-    <!-- <div class="text-center"> -->
-      <button type="submit" class="base-btn m-auto d-block">Отправить</button>
-    <!-- </div> -->
+      <button type="submit" class="base-btn d-block m-auto">Отправить</button>
   </form>
 </template>
 <style scoped >

@@ -7,6 +7,11 @@ export const storage = {
       return token;
     }
   },
+  getRefresh(){
+    const refresh = JSON.parse(localStorage.getItem('refresh'))
+    return (!refresh) ? {} : refresh
+  },
+  
   getCurrentUser(){
     const currentUser = JSON.parse(localStorage.getItem('user'))
     if(!currentUser){
@@ -16,7 +21,10 @@ export const storage = {
     }
   },
   logout(){
-    
     localStorage.clear()
+  },
+  getUserRole(){
+    const user = this.getCurrentUser()
+    return user.userRole
   }
 };

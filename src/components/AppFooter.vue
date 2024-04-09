@@ -23,20 +23,20 @@ const handleClick = (typeForm) => {
         <div class="col-6 mb-1 text-end text-md-center">
           <ul class="nav flex-column">
             <li class="navbar-list-item mb-2">
-              <router-link to="/" class="nav-link">Главная</router-link>
+              <router-link to="/" class="nnav-link">Главная</router-link>
             </li>
             <li class="navbar-list-item mb-2">
-              <router-link to="/place" class="nav-link"
+              <router-link to="/place" class="nnav-link"
                 >Места</router-link
               >
             </li>
             <li class="navbar-list-item mb-2">
-              <router-link to="/beer" class="nav-link"
+              <router-link to="/beer" class="nnav-link"
                 >Пиво</router-link
               >
             </li>
             <li class="navbar-list-item mb-2">
-              <router-link to="/brewery" class="nav-link"
+              <router-link to="/brewery" class="nnav-link"
                 >Пивоварни</router-link
               >
             </li>
@@ -44,7 +44,7 @@ const handleClick = (typeForm) => {
               class="navbar-list-item mb-2"
               @click="handleClick('writeUs')"
             >
-              <span class="nav-link" style="cursor: pointer"
+              <span class="nnav-link" style="cursor: pointer"
                 >Написать нам</span
               >
             </li>
@@ -79,13 +79,13 @@ const handleClick = (typeForm) => {
             >
             <div class="pt-3">
               <a href="" class="social-link">
-                <!-- <img src="@/assets/images/WhatsApp.svg" alt="" /> -->
+                <img src="../../assets/images/WhatsApp.svg" alt="" />
               </a>
               <a href="" class="social-link" style="margin-left: 16px">
-                <!-- <img src="@/assets/images/Telegram-Original.svg" alt="" /> -->
+                <img src="../../assets/images/Telegram-Original.svg" alt="" />
               </a>
               <a href="" class="social-link" style="margin-left: 16px">
-                <!-- <img src="@/assets/images/VK-Original.svg" alt="" /> -->
+                <img src="../../assets/images/VK-Original.svg" alt="" />
               </a>
             </div>
           </div>
@@ -107,7 +107,7 @@ const handleClick = (typeForm) => {
   </footer>
 </template>
 <style scoped >
-.nav-link{
+.nnav-link{
    display: inline-block;
    color: #1e1e1e;
    font-weight: bold;
@@ -115,5 +115,15 @@ const handleClick = (typeForm) => {
    padding: 4px 0;
    position: relative;
    text-decoration: none;
+}
+.router-link-active::before{
+   position: absolute;
+   content:"";
+   top: 100%;
+   left: 0;
+   width: 50%;
+   height: 3px;
+   background-color: yellow;
+
 }
 </style>
