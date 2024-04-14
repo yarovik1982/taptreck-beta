@@ -67,6 +67,7 @@ section{
   background-image: url(../assets/images/Layer1.svg);
   background-repeat: repeat;
   background-size: 150px 200px;
+  height: fit-content;
 }
 .fform-bg{
   background-color: rgba(255,255,255, .8);
@@ -87,14 +88,18 @@ section{
 }
 .btnClose {
   top: 1rem;
-  right: -2rem;
+  right: 0.5rem;
   background-color: transparent;
-  color: white;
-  font-size: 40px;
+  color: black;
+  font-size: 16px;
   border: 0;
 }
 .fform-control{
   border: 1px solid var(--base-warning);
+}
+input.outline-none:focus{
+  box-shadow: initial;
+  outline: none;
 }
 .nnav-link{
   display: inline-block;

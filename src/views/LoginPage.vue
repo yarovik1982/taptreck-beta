@@ -1,19 +1,20 @@
 <script setup>
-import { computed, ref } from 'vue';
-import AppInput from './UI/AppInput.vue'
-import { auth, API_URL } from '../services/auth.service'
-import { useStore } from 'vuex'
-import { storage } from '../services/auth-header'
+import AppInput from '../components/UI/AppInput.vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { storage } from "../services/auth-header.js"
+import { useStore } from 'vuex'
 
-const emits = defineEmits(["close-form", "handle-submit", 'toggle-auth']);
+const store = useStore()
 const login = ref('')
 const password = ref('')
-const toProfile = useRouter()
+
+
+const router = useRouter()
+
 const handleClick = () => {
-  emits("close-form");
-};
-const store = useStore()
+   router.go(-1)
+}
 const handleSubmit = async() => {
  await store.dispatch('GET_AUTH',{
     login:login.value,
@@ -22,26 +23,27 @@ const handleSubmit = async() => {
   const token = await storage.getToken()
   if(!token)return false
  await store.dispatch('GET_USER', token)
- toProfile.push('/profile') 
  setTimeout(()=>{
-  location.reload()
+   router.push('/profile') 
+   location.reload()
  },100)
 }
-
 const updateLogin = (event) => {
   login.value = event.target.value;
 }
 </script>
 <template>
-  <form
+    <div class="layout d-flex" @click.self="handleClick">
+      <form
     action="#"
     class="fform bg-white p-5 w-50 rounded-5 position-relative"
     @submit.prevent="handleSubmit"
     
   >
   <div class="fform-bg w-100 h-100 position-absolute top-0 start-0 rounded-5"></div>
-    <button class="btnClose position-absolute" @click.prevent="handleClick">
-      &times;
+    <button class="btnClose btn btn-outline-warning btn-sm position-absolute" @click.prevent="handleClick">
+      <!-- &times; -->
+      Назад
     </button>
     <div class="form-header">
       <h3 class="form-title">Авторизация</h3>
@@ -68,6 +70,8 @@ const updateLogin = (event) => {
     </div>
       <button type="submit" class="base-btn d-block m-auto">Отправить</button>
   </form>
+    </div>
 </template>
-<style scoped></style>
+<style scoped >
 
+</style>

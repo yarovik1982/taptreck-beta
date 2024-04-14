@@ -6,12 +6,24 @@ import ProfilePage from "../views/ProfilePage.vue";
 import BreweryPage from '../views/BreweryPage.vue';
 import PlacePage from '../views/PlacePage.vue'
 import TestPage from '../views/TestPage.vue'
+import LoginPage from '../views/LoginPage.vue';
+import RegisterPage from '../views/RegisterPage.vue'
 
 const routes = [
    {
       path:'/',
       name: 'home',
       component: HomePage
+   },
+   {
+      path:'/login',
+      name:'login',
+      component:LoginPage,
+   },
+   {
+      path:'/register',
+      name:'register',
+      component:RegisterPage,
    },
    {
       path:'/profile',
