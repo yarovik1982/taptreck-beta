@@ -1,11 +1,13 @@
 //AppHeader.vue
 <script setup>
-import { ref , onMounted} from "vue";
+import { ref , onMounted, computed, watchEffect} from "vue";
 import Logo from "../../assets/images/Layer1.svg";
-import { RouterLink, useRoute } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import {  storage } from '../services/auth-header'
+import { useStore } from "vuex";
 
-
+const store = useStore()
+const router = useRouter()
 const auth = ref(null)
 const toggleAuth = () => {
   if(storage.getCurrentUser()){
@@ -16,10 +18,11 @@ const toggleAuth = () => {
 }
 const logout = () => {
   storage.logout()
+  console.log('logout');
   setTimeout(()=>{location.reload(true)},500)
 }
 
-const logo = ref(Logo);
+
 const emit = defineEmits(["open-form"]);
 const handleClick = (typeForm) => {
   emit("open-form", typeForm);
@@ -80,15 +83,16 @@ onMounted(()=>{
           </form>
         </ul>
         <div class="buttons ms-3" v-if="auth">
-          <button
+          <!-- <button
             class="btn btn-warning text-white btn-sm text-capitalize"
             @click="handleClick('login')"
           >
             Авторизация
-          </button>
+          </button> -->
+          <button class="btn btn-warning text-white btn-sm text-capitalise" @click="router.push('/login')">Авторизация</button>
           <button
             class="btn btn-warning text-white btn-sm text-capitalize ms-1"
-            @click="handleClick('register')"
+            @click="router.push('register')"
           >
             Регистрация
           </button>

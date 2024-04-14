@@ -1,16 +1,16 @@
 <script setup>
 import TemplateTwoColumnsVue from "../components/templates/TemplateTwoColumns.vue";
 import { RouterLink, RouterView } from "vue-router";
-import { storage } from "../services/auth-header";
-import { ref } from "vue";
+
+import { useUserData } from '../composables/getUserRole.js'
 const emit = defineEmits(["open-form"]);
-const userRole = storage.getUserRole();
+// const userRole = storage.getUserRole();
 
 const handleOpenForm = (typeForm) => {
   emit('open-form', typeForm)
   
 };
-
+const {userRole, userName, login, mail} = useUserData()
 </script>
 <template>  
   <nav class="navbar navbar-expand bg-body-tertiary mt-5">
@@ -81,6 +81,20 @@ const handleOpenForm = (typeForm) => {
             </div>
           </div>
         </div>
+        <form  class="p-2">
+          <div class="mb-3 border-bottom border-2 border-warning">
+            <label class="form-label">Имя</label>
+            <input type="text" class="w-100 border-0 px-2 fw-bold" :value="userName" readonly>
+          </div>
+          <div class="mb-3 border-bottom border-2 border-warning">
+            <label class="form-label">Login</label>
+            <input type="text" class="w-100 border-0 px-2 fw-bold" :value="login" readonly>
+          </div>
+          <div class="mb-3 border-bottom border-2 border-warning">
+            <label class="form-label">Email</label>
+            <input type="text" class="w-100 border-0 px-2 fw-bold" :value="mail" readonly>
+          </div>
+        </form>
       </div>
     </template>
   </TemplateTwoColumnsVue>
