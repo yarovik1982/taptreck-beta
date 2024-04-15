@@ -1,11 +1,15 @@
 //ProfilePlacesPage.vue
 <script setup>
-import AppButton from '../../components/UI/AppButton.vue';
-const emit = defineEmits(['open-form'])
+import AppButton from '@/components/UI/AppButton.vue';
+import CardList from '@/components/CardList.vue';
+import { useData } from '@/composables/data';
+const emits = defineEmits(['open-form'])
 const handleClick = (typeForm) => {
     
-  emit("open-form", typeForm);
+  emits("open-form", typeForm);
+
 };
+const {data} = useData()
 </script>
 <template>
     <div class="container-fluid position-absolute" style="top:140px;left: 0;">
@@ -14,6 +18,9 @@ const handleClick = (typeForm) => {
         </div>
     </div>
     <h3 class="text-center">Мои точки продаж</h3>
+    <card-list
+        :list="data['placesData']"
+    ></card-list>
 </template>
 <style scoped >
 
