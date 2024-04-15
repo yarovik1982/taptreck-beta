@@ -23,7 +23,7 @@ const handleClick = (type) => {
     </div>
     <div class="container-fluid">
       <div class="row align-items-center">
-        <div class="col-6 p-2">
+        <div class="col-6 p-4">
           <div class="text-center">
             <label for="inpFile" class="text-center">
               <input
@@ -34,11 +34,11 @@ const handleClick = (type) => {
                 
                 @change="previewImage"
               />
-              <i class="bi bi-image text-warning" style="font-size: 70px"></i>
+              <i class="bi bi-image text-warning" style="font-size: 70px; cursor:pointer;"></i>
             </label>
-            <div v-if="imageUrl" class="preview">
-              <div class="previev-container">
-                <img :src="imageUrl" alt="Preview" />
+            <div  class="preview bg-opacity-10 bg-warning" data-text="Предварительный просмотр">
+              <div class="preview-container">
+                <img :src="imageUrl" alt="Preview" v-if="imageUrl"/>
               </div>
             </div>
           </div>
@@ -89,11 +89,26 @@ const handleClick = (type) => {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  width: 100%;
+  height: 200px;
+  border: 2px dotted yellow;
+  border-radius: 16px;
+  position: relative;
+}
+.preview:before{
+  position: absolute;
+  content: attr(data-text);
+  font-size: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 200px;
+  text-align: center;
 }
 .preview-container {
-  width: 100%;
-  /* height: 100px; */
-  border: 1px solid #ddd;
+  width: 200px;
+  height: 200px;
+  border: 1px dotted #ddd;
   
 }
 
@@ -101,5 +116,6 @@ const handleClick = (type) => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 </style>

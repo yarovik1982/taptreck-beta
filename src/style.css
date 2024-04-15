@@ -184,3 +184,12 @@ input.outline-none:focus{
 .advansed-item + .advansed-item{
   margin-top: 0.5rem;
 }
+.advansed-img{
+  overflow: hidden;
+  border-radius: 8px;
+}
+.advansed-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -83,6 +83,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
    if (to.path.startsWith('/profile')) {
      if (JSON.parse(localStorage.getItem('token'))) {
+      console.log(JSON.parse(localStorage.getItem('token')));
        next();
      } else {
        next('/');

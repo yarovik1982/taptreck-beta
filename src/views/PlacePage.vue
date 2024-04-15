@@ -3,21 +3,16 @@ import TemplateTwoColumnsVue from '../components/templates/TemplateTwoColumns.vu
 import AdvansedBlockVue from '../components/advansed/AdvansedBlock.vue';
 import AppButton from '../components/UI/AppButton.vue'
 import CardList from "../components/CardList.vue"
-import { ref } from 'vue';
+import { useData } from '../composables/data';
 
-const dataPlace = ref([
-{"id":"1", "title": "Place 1", "description":"Description Place 1","available":false,image:'../../assets/images/news1.png'},
-{"id":"2", "title": "Place 2", "description":"Description Place 2","available":false,image:'../../assets/images/news2.png'},
-{"id":"3", "title": "Place 3", "description":"Description Place 3","available":false,image:'../../assets/images/news3.png'},
-{"id":"4", "title": "Place 4", "description":"Description Place 4","available":false,image:'../../assets/images/news4.png'},
-])
+const {data} = useData()
 </script>
 <template>
     <h3 class="text-center">Это страница мест</h3>
     <TemplateTwoColumnsVue>
       <template #leftColumn>
         <div class="flex-body">
-          <CardList :list="dataPlace"></CardList>
+          <CardList :list="data['placesData']"></CardList>
         </div>
         <div class="text-center mt-5">
           <AppButton :class="'base-btn'">Загрузить еще</AppButton>
@@ -30,14 +25,17 @@ const dataPlace = ref([
             <AdvansedBlockVue 
               :title="'Рекомендованные места'"
               :class="'advansed-beer mb-1 border border-1 border-warning rounded-top'"
+              :list="data['placesData']"
               ></AdvansedBlockVue>
             <AdvansedBlockVue 
               :title="'Рекомендованные пивоварни'"
               :class="'advansed-beer mb-1 border border-1 border-warning'"
+              :list="data['breweriesData']"
             ></AdvansedBlockVue>
             <AdvansedBlockVue 
               :title="'Может быть интересно'"
               :class="'advansed-beer mb-1 border border-1 border-warning rounded-bottom'"
+              :list="data['beerData']"
               ></AdvansedBlockVue>
           </div>
         </div>
